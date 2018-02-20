@@ -75,16 +75,14 @@ def main(argv):
 
     # Method 1: convert train_x and train_y to pd. Series
     '''
-        # Conver train_x to dict, and key value as Series
-        train_x_dict = dict()
-        for index, key in enumerate(train_x_keys):
-            train_x_dict[key] = Series(train_x[:, index])
-
-        train_y_shape = train_y.shape
-
-        train_y = Series(train_y.reshape(-1))
+    # Conver train_x to dict, and key value as Series
+    train_x_dict = dict()
+    for index, key in enumerate(train_x_keys):
+        train_x_dict[key] = Series(train_x[:, index])
+    train_y_shape = train_y.shape
+    #train_y = Series(train_y.reshape(-1))
+    train_y = Series(train_y[:, 0])
     '''
-
     # Method 2: keep train_x and train_y as array
     train_x_dict = dict()
     test_x_dict = dict()
